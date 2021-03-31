@@ -1,0 +1,40 @@
+@Library('MyShareLib@main') _
+
+pipeline {
+    agent any
+
+    tools {
+		jdk "JAVA_HOME"
+		git 'Default'
+		groovy 'GROOVY_HOME'
+    }
+
+    stages 
+    {
+        stage('Checkoutcode') 
+        {
+            steps 
+            {
+                 echo 'checkingout the code'
+                 codecheckout()
+            }
+            
+        }
+        
+        stage('CSVFileAnalysis') 
+        {
+			      steps 
+            {
+			        CSVFileAnalyze()
+			      }
+		    }
+		
+		    stage('EmailNotification') 
+        {
+			      steps 
+            {
+			        Emailstep()
+			      }
+		    }
+    }
+}
