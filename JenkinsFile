@@ -13,15 +13,15 @@ pipeline
 
     stages 
     {
-      //  stage('Checkoutcode') 
-      //  {
-           // steps 
-           // {
-           //      echo 'checkingout the code'
-           //      codecheckout()
-          //  }
+        stage('Checkoutcode') 
+        {
+            steps 
+            {
+                 echo 'checkingout the code'
+                 codecheckout()
+            }
             
-      //  }
+        }
         
         stage('CSVFileAnalysis') 
         {
