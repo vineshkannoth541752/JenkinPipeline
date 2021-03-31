@@ -8,7 +8,7 @@ pipeline
     {
 		jdk "JAVA_HOME"
 		git 'Default'
-		groovy 'GROOVY_HOME'
+		//groovy 'GROOVY_HOME'
     }
 
     stages 
