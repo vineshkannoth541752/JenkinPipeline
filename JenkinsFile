@@ -1,9 +1,11 @@
 @Library('MyShareLib@main') _
 
-pipeline {
+pipeline 
+{
     agent any
 
-    tools {
+    tools 
+    {
 		jdk "JAVA_HOME"
 		git 'Default'
 		groovy 'GROOVY_HOME'
@@ -23,18 +25,19 @@ pipeline {
         
         stage('CSVFileAnalysis') 
         {
-			      steps 
-            {
-			        CSVFileAnalyze()
-			      }
-		    }
+             steps 
+               {
+	          echo 'CSV File analysis started'
+	          CSVFileAnalyze()
+	       }
+	}
 		
-		    stage('EmailNotification') 
+        stage('EmailNotification') 
         {
-			      steps 
-            {
-			        Emailstep()
-			      }
-		    }
+              steps 
+              {
+	            Emailstep()
+	      }
+        }
     }
 }
